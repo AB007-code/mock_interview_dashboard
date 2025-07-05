@@ -29,7 +29,12 @@ const FormField = ({
       <FormItem>
         <FormLabel className="label">{label}</FormLabel>
         <FormControl>
-          <Input className="input" placeholder={placeholder} {...field} />
+          <Input
+            className="input"
+            placeholder={placeholder}
+            type={type}
+            {...field}
+          />
         </FormControl>
         <FormMessage />
       </FormItem>
