@@ -193,7 +193,7 @@ export const generator: CreateWorkflowDTO = {
           },
         ],
         name: "getUserData",
-        url: "https://mock-interview-dashboard.vercel.app/api/vapi/generate",
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/vapi/generate`,
         method: "POST",
         body: {
           type: "object",
