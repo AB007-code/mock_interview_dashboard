@@ -62,16 +62,16 @@ const Agent = ({ userName, userId, type, questions }: AgentProps) => {
     if (callStatus === CallStatus.FINISHED) router.push("/");
   }, [messages, callStatus, type, userId]);
 
-  const workflow = process.env.NEXT_PUBLIC_VAPI_WORKFLOW_ID!;
+  // const workflow = process.env.NEXT_PUBLIC_VAPI_WORKFLOW_ID!;
   const handleCall = async () => {
     setCallStatus(CallStatus.CONNECTING);
 
     if (type === "generate") {
       await vapi.start(
         undefined,
-        undefined,
-        undefined,
-        workflow,
+        // undefined,
+        // undefined,
+        // workflow,
         {
           variableValues: {
             username: userName,
@@ -83,7 +83,6 @@ const Agent = ({ userName, userId, type, questions }: AgentProps) => {
         undefined,
         generator
       );
-      // console.log(vapi.start());
     } else {
       let formattedQuestions = "";
       if (questions) {
