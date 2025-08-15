@@ -96,7 +96,7 @@ const Agent = ({
 
   // const workflow = process.env.NEXT_PUBLIC_VAPI_WORKFLOW_ID!;
   const handleCall = async () => {
-    console.log(userId);
+    // console.log(userId);
     // generator.body.properties.userid.value = userId
     generator.nodes[1].tool.body.properties.userid.value = userId;
     setCallStatus(CallStatus.CONNECTING);
