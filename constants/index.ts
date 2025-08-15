@@ -1,6 +1,5 @@
 import { CreateAssistantDTO, CreateWorkflowDTO } from "@vapi-ai/web/dist/api";
 import { z } from "zod";
-
 export const mappings = {
   "react.js": "react",
   reactjs: "react",
@@ -226,8 +225,8 @@ export const generator: CreateWorkflowDTO = {
             },
             userid: {
               type: "string",
+              value: "{{ user.id }}",
               description: "",
-              value: "{{ userid }}",
             },
           },
         },
@@ -332,7 +331,7 @@ Be professional, yet warm and welcoming:
 Use official yet friendly language.
 Keep responses concise and to the point (like in a real voice interview).
 Avoid robotic phrasing—sound natural and conversational.
-Answer the candidate’s questions professionally:
+Answer the candidate's questions professionally:
 
 If asked about the role, company, or expectations, provide a clear and relevant answer.
 If unsure, redirect the candidate to HR for more details.

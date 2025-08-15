@@ -4,6 +4,7 @@ import React from "react";
 
 const page = async () => {
   const user = await getCurrentUser();
+  console.log(user.id);
   return (
     <>
       <h3>Interview Generation</h3>

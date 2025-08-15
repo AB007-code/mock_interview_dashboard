@@ -64,14 +64,13 @@ const Agent = ({ userName, userId, type, questions }: AgentProps) => {
 
   // const workflow = process.env.NEXT_PUBLIC_VAPI_WORKFLOW_ID!;
   const handleCall = async () => {
+    console.log(userId);
+    // generator.body.properties.userid.value = userId
+    generator.nodes[1].tool.body.properties.userid.value = userId;
     setCallStatus(CallStatus.CONNECTING);
-
     if (type === "generate") {
       await vapi.start(
         undefined,
-        // undefined,
-        // undefined,
-        // workflow,
         {
           variableValues: {
             username: userName,
@@ -92,9 +91,7 @@ const Agent = ({ userName, userId, type, questions }: AgentProps) => {
       }
 
       await vapi.start(interviewer, {
-        variableValues: {
-          questions: formattedQuestions,
-        },
+        variableValues: { questions: formattedQuestions },
       });
     }
   };
